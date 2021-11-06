@@ -32,7 +32,7 @@ INCTEXT(SketchText, "incbin-print-self.ino");
 
 // Alternatively you can include the file as BINARY data
 // --
-// INCTEXT(SketchText, "incbin-print-self.ino");
+// INCBIN(SketchText, "incbin-print-self.ino");
 // --
 // This will create global variables:
 //  const unsigned char gSketchTextData[];              // Pointer to the data
