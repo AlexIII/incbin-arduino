@@ -68,20 +68,23 @@ lto-wrapper.exe: fatal error:
 
 do the following steps:
 
-#### Arduino IDE users
+#### Windows Arduino IDE 1.8 users
   1. Close **all** Arduino IDE windows,
   2. Re-open your ***.ino file via double-click**. Do NOT do File -> Open...
 
-#### VS Code Arduino extension users
+#### VS Code Arduino extension users (any OS)
   1. Upgrade your extension to v0.4.7 or newer,
   2. Ensure the path in the INCBIN or INCTEXT is **relative to the workspace folder**, and not to the source file. You can also use absolute path.
+
+#### Windows Arduino IDE 2 Beta, Linux Arduino IDE (any)
+No solutions to use relative path. Sorry. Use absolute path instead. Linux users may also use path relative to home.
 
 ### Ok, but why???
 
 The underlying library uses the `.incbin` directive of the inline assembler. The thing is, it accepts the path relative to the current directory in which the compiler is running (and not to the source file).
-Arduino IDE *usually* starts the build in the project main directory (in which the *.ino file resides), but it is not guaranteed. Sometimes build can start in another directory and will fail. Re-opening the IDE via double-click on the *.ino file convinces it to start the build in the project's folder.
+Arduino IDE *usually* starts the build in the project main directory (in which the *.ino file resides), but it is not guaranteed. Sometimes build can start in another directory and will fail. Re-opening the IDE via double-click on the *.ino file convinces it to start the build in the project's folder (but only in ver. 1.8 under Windows).
 
-Also, a library example never compiles in its own folder, that's why you need to copy it somewhere on the disk, otherwise the compilation will fail.
+Also, a library example never runs compilation in its own folder, that's why you need to copy it somewhere on the disk, otherwise the compilation will fail.
 
 **If you have an idea on how to handle this *right* way, please post an issue on the subject.**
 
