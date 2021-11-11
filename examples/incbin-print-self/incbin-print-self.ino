@@ -23,7 +23,7 @@
 #include "incbin.h"
 
 // Include TEXT file "incbin-print-self.ino" with name `Sketch`
-INCTEXT(SketchText, "incbin-print-self.ino");
+INCTXT(SketchText, "incbin-print-self.ino");
 // This will create global variables:
 //  const __FlashStringHelper gSketchTextData[];        // NULL-terminated Flash string, pointer to the data
 //  const __FlashStringHelper *const gSketchTextEnd;    // Pointer to the end of the data
@@ -52,7 +52,7 @@ void setup() {
   Serial.println(gSketchTextSize);
 
 
-/* Alternatively, read the data byte-by-byte (for AVR-based Arduino) */
+/* Alternatively, read the data from ROM byte-by-byte */
 //  PGM_P p = reinterpret_cast<PGM_P>(gSketchTextData);
 //  for(int i = 0; i < gSketchTextSize; ++i) {
 //    unsigned char c = pgm_read_byte(p++);

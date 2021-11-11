@@ -21,8 +21,8 @@ See [Limitations](#Limitations) for the explanation.
 ```C++
 #include "incbin.h"
 
-INCTEXT(WebPage, "index.html");         // For text     (will be NULL-terminated)
-INCBIN(Sound, "sound.wav");             // For binary   (will STILL be NULL-terminated)
+INCTXT(WebPage, "index.html");          // For text     (will be NULL-terminated)
+INCBIN(Sound, "sound.wav");             // For binary
 
 void setup() {
   Serial.begin(115200);
@@ -38,7 +38,7 @@ void setup() {
 }
 ```
 
-Macros `INCTEXT(NAME, FILE)` and `INCBIN(NAME, FILE)` accept path to the `FILE` 
+Macros `INCTXT(NAME, FILE)` and `INCBIN(NAME, FILE)` accept path to the `FILE` 
 **relative to the project main folder** (where the *.ino file is placed), and 
 NOT to the source file in which you use these macros. You can use absolute path as well.
 
@@ -72,9 +72,9 @@ do the following steps:
   1. Close **all** Arduino IDE windows,
   2. Re-open your ***.ino file via double-click**. Do NOT do File -> Open...
 
-#### VS Code Arduino extension users (any OS)
+#### [VS Code Arduino](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.vscode-arduino) extension users (any OS)
   1. Upgrade your extension to v0.4.7 or newer,
-  2. Ensure the path in the INCBIN or INCTEXT is **relative to the workspace folder**, and not to the source file. You can also use absolute path.
+  2. Ensure the path in the `INCBIN` or `INCTXT` is **relative to the workspace folder**, and not to the source file. You can also use absolute path.
 
 #### Windows Arduino IDE 2 Beta, Linux Arduino IDE (any)
 No solutions to use relative path. Sorry. Use absolute path instead. Linux users may also use path relative to home.
@@ -97,6 +97,7 @@ Tested with
 
 Should also work with
 - ARM-based Arduino
+- ESP8285
 
 
 ## License

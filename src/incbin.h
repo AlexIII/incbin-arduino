@@ -28,4 +28,8 @@
         INCBIN_PTR_TYPE(NAME, FILENAME, char)
 #endif
 
+#ifndef INCTXT
+#   define INCTXT(NAME, FILENAME) INCTEXT(NAME, FILENAME)
+#endif
+
 #endif /* _ARDUINO_INCBIN_LIB_H_ */
