@@ -23,7 +23,7 @@
 #include "incbin.h"
 
 // Include TEXT file "incbin-print-self.ino" with name `Sketch`
-INCTEXT(SketchText, "incbin-print-self.ino");
+INCTXT(SketchText, "incbin-print-self.ino");
 // This will create global variables:
 //  const __FlashStringHelper gSketchTextData[];        // NULL-terminated Flash string, pointer to the data
 //  const __FlashStringHelper *const gSketchTextEnd;    // Pointer to the end of the data
