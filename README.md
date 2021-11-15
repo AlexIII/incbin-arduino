@@ -1,4 +1,5 @@
 # incbin - Include binary and text files in your Arduino project with ease
+<img align="right" width="400" src="incbin.png" />
 
 *This is a fork of [this](https://github.com/graphitemaster/incbin) project wrapped as an Arduino library.*
 
